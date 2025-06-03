@@ -4,16 +4,15 @@ import random
 
 
 class ConfigAPIUser(HttpUser):
-    wait_time = between(3, 3.5)
+    wait_time = between(0.5, 1)
 
     SERVICE_TOKENS: Dict[str, str] = {
         "web-app": "webapp_abc123",
         "api-service": "api_def456",
-        "worker": "worker_ghi789"
     }
 
     def on_start(self):
-        self.service = random.choice(["web-app", "api-service", "worker"])
+        self.service = random.choice(["web-app", "api-service"])
         self.token = self.SERVICE_TOKENS[self.service]
         self.headers = {"Authorization": f"Bearer {self.token}"}
 
