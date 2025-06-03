@@ -44,7 +44,7 @@
 **Context:** Test periodic al sistemului de backup si recovery
  
 **Steps:**
-1. Backup administrator-ul executa backup manual al tuturor configuratiilor
+1. Backup administrator-ul executa backup al configuratiilor printr-o modificare nedaunatoare
 2. Sistemul creaza arhiva completa cu timestamp
 3. Administrator-ul valideaza continutul backup-ului
 4. Executa test de recovery prin restaurarea unei configuratii din backup

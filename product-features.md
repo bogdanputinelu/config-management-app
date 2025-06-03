@@ -6,7 +6,7 @@
 **Descriere:** Operatii de baza pentru gestionarea configuratiilor
  
 **Functionalitati:**
-- Upload configuratii in format YAML/JSON
+- Upload configuratii in format YAML
 - Retrieve configuratii pentru servicii
 - Update configuratii existente
 - Delete configuratii obsolete
@@ -27,7 +27,7 @@
 - Versionare automata la fiecare modificare
 - Stocare permanenta a versiunilor anterioare
 - Lista versiunilor disponibile pentru fiecare configuratie
-- Metadata pentru fiecare versiune (timestamp, dimensiune)
+- Metadata pentru fiecare versiune (timestamp)
  
 ### 4. Configuration Rollback
 **Descriere:** Capacitatea de a reveni rapid la versiuni anterioare
@@ -42,9 +42,7 @@
 **Descriere:** Validarea configuratiilor inainte de stocare
  
 **Functionalitati:**
-- Verificarea sintaxei YAML/JSON
-- Validarea structurii de baza
-- Verificarea campurilor obligatorii pentru servicii cunoscute
+- Verificarea sintaxei YAML
 - Mesaje de eroare clare pentru probleme de validare
  
 ### 6. Token-Based Authentication
@@ -63,13 +61,11 @@
 - Health check endpoint pentru status general
 - Informatii despre numarul total de configuratii
 - Monitorizarea utilizarii disk space-ului
-- Timp de uptime al serviciului
  
 ### 8. Backup Management
 **Descriere:** Sistem de backup pentru protectia datelor
  
 **Functionalitati:**
-- Creare backup manual al tuturor configuratiilor
+- Creare backup la fiecare modificare
 - Arhivare cu timestamp pentru identificare
-- Validarea integritatii backup-urilor
 - Posibilitatea de restore din backup

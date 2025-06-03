@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-manage
+  namespace: ingsoft
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-manage
+  template:
+    metadata:
+      labels:
+        app: config-manage
+    spec:
+      containers:
+      - name: config-manage
+        image: config-manage-image:latest
+        command: ["uvicorn", "app:app", "--port=8000"]
+        imagePullPolicy: Never
+        env:
+          - name: ENVIRONMENT
+            value: production
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+        volumeMounts:
+          - mountPath: /app/ingsoft
+            name: config-manage-storage
+      volumes:
+        - name: config-manage-storage
+          persistentVolumeClaim:
+            claimName: config-manage-pvc

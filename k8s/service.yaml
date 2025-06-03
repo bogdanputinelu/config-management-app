@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: config-manage
+  namespace: ingsoft
+spec:
+  selector:
+    app: config-manage
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
+  type: ClusterIP
